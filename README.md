@@ -1,2 +1,19 @@
-# simple-img-converter
-Simple converter on C++ (study project). Converts image between formats: .jpeg (.jpg), .bmp, .ppm.
+# Простой конвертер изображений
+## Краткое описание
+Конвертер умеет преобразовывать изображение между форматами: `.ppm`, `.jpeg`, `.jpg`, `.bpm`.
+## Компиляция
+Сборка проекта осуществляется при помощи CMake с предустановленным libprotoc (либо аналогичным proto-генератором) из папки `ImgConverter`:
+```
+cmake . -DCMAKE_PREFIX_PATH=/path/to/protobuf/package -DLIBJPEG_DIR="../libjpeg"
+cmake --build .
+```
+## Запуск программы
+Для выполнения программы, необходимо в качестве аргументов передать входной файл (тот, который будет конвертироваться) и выходной файл (в который будет записан результат). Пример:
+```
+> ./imgconv from.jpeg to.ppm
+```
+## Зависимости
+* C++17
+* Компилятор с поддержкой 17-ого стандарта
+* libjpeg
+* CMake 3.11
